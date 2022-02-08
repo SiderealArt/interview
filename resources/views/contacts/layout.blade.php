@@ -14,29 +14,18 @@
             font-family: 'Poppins', sans-serif;
         }
 
-        :root {
-            --body-color: #E4E9F7;
-            --sidebar-color: #FFF;
-            --primary-color: #695CFE;
-            --primary-color-light: #F6F5FF;
-            --toggle-color: #DDD;
-            --text-color: #707070;
-            --tran-03: all 0.2s ease;
-            --tran-03: all 0.3s ease;
-            --tran-04: all 0.3s ease;
-            --tran-05: all 0.3s ease;
-        }
-
         body {
-            background-color: var(--body-color);
-            transition: var(--tran-05);
+            background-color: #f5edfc;
+            transition: all 0.3s ease;
         }
-
+        a{
+            text-decoration: none;
+        }
         ::selection {
-            background-color: var(--primary-color);
+            background-color: #951cff;
             color: #fff;
         }
-        
+
         .sidebar {
             position: fixed;
             top: 0;
@@ -44,8 +33,8 @@
             height: 100%;
             width: 70px;
             padding: 5px 6px;
-            background: var(--sidebar-color);
-            transition: var(--tran-05);
+            background: white;
+            transition: all 0.3s ease;
         }
 
         .sidebar li {
@@ -66,18 +55,9 @@
             font-size: 20px;
         }
 
-        .sidebar .text,
         .sidebar .icon {
-            color: var(--text-color);
-            transition: var(--tran-03);
-        }
-
-        .sidebar .text {
-            font-size: 17px;
-            font-weight: 500;
-            white-space: nowrap;
-            display: none;
-            z-index: 55;
+            color: gray;
+            transition: all 0.3s ease;
         }
 
         .sidebar li a {
@@ -90,16 +70,15 @@
             width: 100%;
             border-radius: 6px;
             text-decoration: none;
-            transition: var(--tran-03);
+            transition: all 0.3s ease;
         }
 
         .sidebar li a:hover {
-            background-color: var(--primary-color);
+            background-color: #6f31d4;
         }
 
-        .sidebar li a:hover .icon,
-        .sidebar li a:hover .text {
-            color: var(--sidebar-color);
+        .sidebar li a:hover .icon {
+            color: white;
         }
 
         .sidebar .menu-bar {
@@ -122,18 +101,132 @@
             height: 100vh;
             width: calc(100% - 90px);
             background-color: var(--body-color);
-            transition: var(--tran-05);
+            transition: all 0.3s ease;
         }
 
-        .home .text {
+        .card {
+            height: 200px;
+            width: 300px;
+            box-shadow: 5px 5px 30px 7px rgba(0, 0, 0, 0.25), -5px -5px 30px 7px rgba(0, 0, 0, 0.22);
+            margin: 1.5rem;
+            border-radius: 20px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .card img {
+            width: inherit;
+            height: inherit;
+            border-radius: 20px;
+            filter: brightness(70%);
+            object-fit: cover;
+            position: absolute;
+            transition: all 0.3s ease;
+            z-index: 3;
+        }
+
+        .card-list {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .bt-add-new {
+            position: absolute;
+            bottom: 40px;
+            right: 40px;
+            background-color: #695CFE;
+            border-radius: 25px;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        .bt-add-new-link {
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .action {
+            width: 260px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateY(-50%) translateX(-50%);
+            text-align: center;
+            z-index: 30;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover .action {
+            opacity: 1;
+        }
+
+        .card:hover img, .card:hover .content {
+            filter: brightness(40%);
+        }
+
+        .action button {
+            width: 65px;
+            padding: 10px;
+            background-color: #ffffff00;
+            border-radius: 10px;
+            color: white;
+            border: #e30000 solid 2px;
+            transition: all 0.3s ease;
+        }
+
+        .action button:hover {
+            background-color: #e30000;
+        }
+
+        .action .view {
+            border: #00d138 solid 2px;
+        }
+
+        .action .view:hover {
+            background-color: #00d138;
+        }
+
+        .action .edit {
+            border: #0077ed solid 2px;
+        }
+
+        .action .edit:hover {
+            background-color: #0077ed;
+        }
+
+        #name {
             font-size: 30px;
-            font-weight: 500;
-            color: var(--text-color);
-            padding: 12px 60px;
+            color: white;
+            font-weight: 600;
         }
 
-        body.dark .home .text {
-            color: var(--text-color);
+        #phone, #address {
+            color: rgb(200, 200, 200);
+        }
+
+        .content {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            z-index: 5;
+            transition: all 0.3s ease;
+        }
+
+        .error-icon{
+            color: #00000055;
+            font-size: 150px;
+            margin-left: 10px;
+        }
+
+        .error-container{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateY(-50%) translateX(-50%);
+            text-align: center;
         }
     </style>
 </head>
@@ -147,42 +240,36 @@
                     <li class="nav-link">
                         <a href="#">
                             <i class='bx bx-home-alt icon'></i>
-                            <span class="text">Dashboard</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
                         <a href="#">
                             <i class='bx bx-bar-chart-alt-2 icon'></i>
-                            <span class="text">Revenue</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
                         <a href="#">
                             <i class='bx bx-bell icon'></i>
-                            <span class="text">Notifications</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
                         <a href="#">
                             <i class='bx bx-pie-chart-alt icon'></i>
-                            <span class="text">Analytics</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
                         <a href="#">
                             <i class='bx bx-heart icon'></i>
-                            <span class="text">Likes</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
                         <a href="#">
                             <i class='bx bx-wallet icon'></i>
-                            <span class="text">Wallets</span>
                         </a>
                     </li>
 
@@ -190,10 +277,9 @@
             </div>
 
             <div class="bottom-content">
-                    <a href="#">
-                        <i class='bx bx-log-out icon'></i>
-                        <span class="text">Logout</span>
-                    </a>
+                <a href="#">
+                    <i class='bx bx-log-out icon'></i>
+                </a>
             </div>
         </div>
     </nav>
