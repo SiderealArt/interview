@@ -50,7 +50,9 @@ class ContactController extends Controller
     public function show($id)
     {
         $contact = Contact::findOrFail($id);
-        return view('contacts.show')->with('contacts', $contact);
+        $previous = Contact::where('id', '<',$id)->max('id');
+        $next = Contact::where('id', '>', $id)->min('id');
+        return view('contacts.show')->with('contacts', $contact)->with('previous', $previous)->with('next', $next);
     }
 
     /**

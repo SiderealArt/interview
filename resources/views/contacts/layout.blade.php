@@ -18,9 +18,11 @@
             background-color: #f5edfc;
             transition: all 0.3s ease;
         }
-        a{
+
+        a {
             text-decoration: none;
         }
+
         ::selection {
             background-color: #951cff;
             color: #fff;
@@ -163,7 +165,8 @@
             opacity: 1;
         }
 
-        .card:hover img, .card:hover .content {
+        .card:hover img,
+        .card:hover .content {
             filter: brightness(40%);
         }
 
@@ -203,7 +206,8 @@
             font-weight: 600;
         }
 
-        #phone, #address {
+        #phone,
+        #address {
             color: rgb(200, 200, 200);
         }
 
@@ -215,18 +219,80 @@
             transition: all 0.3s ease;
         }
 
-        .error-icon{
+        .error-icon {
             color: #00000055;
             font-size: 150px;
             margin-left: 10px;
         }
 
-        .error-container{
+        .error-container {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translateY(-50%) translateX(-50%);
             text-align: center;
+        }
+
+        .split {
+            height: 100%;
+            width: 58%;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            overflow-x: hidden;
+        }
+
+        .image-container {
+            left: 70px;
+            width: 40%;
+            overflow: hidden;
+        }
+
+        .image {
+            height: inherit;
+            width: 100%;
+            filter: blur(5px);
+            transform: scale(1.1);
+        }
+
+        .details {
+            right: -70px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .show-title{
+            font-size: 120px;
+        }
+
+        .show-text{
+            font-size:25px;
+        }
+            .show-text-title{
+                font-size:20px;
+                font-weight:600;
+                color:#4d4d4d;
+                border-bottom:#737373 solid 1px;
+                width:100px;
+            }
+        .show-btn{
+            position: fixed;
+            top:50%;
+            transform: translateY(-50%);
+            z-index: 50;
+            font-size: 20px;
+            color: white;
+            text-shadow: #00000080 0px 0px 10px;
+            transition: all 0.1s ease;
+        }
+
+        .show-btn:hover{
+            font-size:22px;
+        }
+        .next{
+            right:20px;
+            color: black;
         }
     </style>
 </head>

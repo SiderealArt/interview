@@ -11,7 +11,7 @@
     @endif
     @foreach($contacts as $item)
     <div class="card">
-        <img alt="" src="https://www.bing.com/th?id=ORMS.4e7cecdb0499cd2b215fb23adba5f19b" />
+        <img alt="" src="{{$item->avatar}}" onerror="this.src='https://picsum.photos/200/300'" />
         <div class="content">
             <p id="name">{{ $item->name }}</p>
             <p id="address">{{ $item->address }}</p>
