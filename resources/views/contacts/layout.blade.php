@@ -262,23 +262,24 @@
             justify-content: center;
         }
 
-        .show-title{
+        .show-title {
             font-size: 120px;
         }
 
-        .show-text{
-            font-size:25px;
+        .show-text {
+            font-size: 25px;
         }
-            .show-text-title{
-                font-size:20px;
-                font-weight:600;
-                color:#4d4d4d;
-                border-bottom:#737373 solid 1px;
-                width:100px;
-            }
-        .show-btn{
+
+        .show-text-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #4d4d4d;
+            border-bottom: #737373 solid 1px;
+        }
+
+        .show-btn {
             position: fixed;
-            top:50%;
+            top: 50%;
             transform: translateY(-50%);
             z-index: 50;
             font-size: 20px;
@@ -287,11 +288,12 @@
             transition: all 0.1s ease;
         }
 
-        .show-btn:hover{
-            font-size:22px;
+        .show-btn:hover {
+            font-size: 22px;
         }
-        .next{
-            right:20px;
+
+        .next {
+            right: 20px;
             color: black;
         }
     </style>
@@ -304,38 +306,25 @@
             <div class="menu">
                 <ul class="menu-links">
                     <li class="nav-link">
-                        <a href="#">
+                        <a href="/contact">
                             <i class='bx bx-home-alt icon'></i>
                         </a>
                     </li>
 
                     <li class="nav-link">
                         <a href="#">
-                            <i class='bx bx-bar-chart-alt-2 icon'></i>
+                        <i class='bx bx-collection icon' ></i>
                         </a>
                     </li>
 
                     <li class="nav-link">
                         <a href="#">
-                            <i class='bx bx-bell icon'></i>
+                        <i class='bx bx-cog icon'></i>
                         </a>
                     </li>
-
                     <li class="nav-link">
                         <a href="#">
-                            <i class='bx bx-pie-chart-alt icon'></i>
-                        </a>
-                    </li>
-
-                    <li class="nav-link">
-                        <a href="#">
-                            <i class='bx bx-heart icon'></i>
-                        </a>
-                    </li>
-
-                    <li class="nav-link">
-                        <a href="#">
-                            <i class='bx bx-wallet icon'></i>
+                        <i class='bx bx-info-circle icon'></i>
                         </a>
                     </li>
 
