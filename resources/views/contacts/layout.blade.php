@@ -200,7 +200,7 @@
             background-color: #0077ed;
         }
 
-        #name {
+        #card-name {
             font-size: 30px;
             color: white;
             font-weight: 600;
@@ -296,6 +296,68 @@
             right: 20px;
             color: black;
         }
+
+        .popup-container {
+            position: fixed;
+            background-color: rgba(0, 0, 0, 0.3);
+            align-items: center;
+            justify-content: center;
+            display: none;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 100vw;
+            transition: opacity 0.3s ease;
+            z-index: 40;
+        }
+
+        .popup {
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            padding: 30px 50px;
+            text-align: center;
+            width: 380px;
+            max-width: 100%;
+            z-index: 39;
+        }
+
+        .input-container {
+            position: relative;
+            padding: 0;
+            margin: 5px;
+            border: none;
+            overflow: visible;
+        }
+
+        .input-field {
+            padding: 12px 10px 8px;
+            border: none;
+            border-bottom: 1px solid #000;
+            font-size: 20px;
+            outline: none;
+            margin-top: 10px;
+        }
+
+        label {
+            position: absolute;
+            transform-origin: 0 -150%;
+            transition: transform 300ms ease;
+            font-size: 20px;
+            color: #607D8B;
+            top: 20px;
+            left: 10px;
+            color: #4d4d4d;
+            pointer-events: none;
+        }
+
+        .input-field:focus+label {
+            transform: scale(0.6);
+        }
+
+        .input-field:valid+label {
+            transform: scale(0.6);
+        }
     </style>
 </head>
 
@@ -313,18 +375,18 @@
 
                     <li class="nav-link">
                         <a href="#">
-                        <i class='bx bx-collection icon' ></i>
+                            <i class='bx bx-collection icon'></i>
                         </a>
                     </li>
 
                     <li class="nav-link">
-                        <a href="#">
-                        <i class='bx bx-cog icon'></i>
+                        <a href="/settings">
+                            <i class='bx bx-cog icon'></i>
                         </a>
                     </li>
                     <li class="nav-link">
-                        <a href="#">
-                        <i class='bx bx-info-circle icon'></i>
+                        <a href="/about">
+                            <i class='bx bx-info-circle icon'></i>
                         </a>
                     </li>
 
