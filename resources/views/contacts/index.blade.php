@@ -14,14 +14,14 @@
     <div class="content">
         <p id="card-name">{{ $item->name }}</p>
         @if($item->address)
-        <p id="address">{{ $item->address }}</p>
+        <p id="card-address">{{ $item->address }}</p>
         @else
-        <p id="address">Not Provided</p>
+        <p id="card-address">Not Provided</p>
         @endif
         @if($item->phone)
-        <p id="phone">{{ $item->phone }}</p>
+        <p id="card-phone">{{ $item->phone }}</p>
         @else
-        <p id="address">Not Provided</p>
+        <p id="card-address">Not Provided</p>
         @endif
     </div>
     <div class="action">
@@ -43,38 +43,58 @@
         <form action="{{ url('contact') }}" method="post">
             {!! csrf_field() !!}
             <div class="input-container">
-                <input type="text" name="name" id="name" class="input-field" required>
+                <input type="text" name="name" id="name" placeholder="&nbsp;" class="input-field" required>
                 <label>Name</label>
             </div>
             <div class="input-container">
-                <input type="text" name="address" id="address" class="input-field">
+                <input type="text" name="address" placeholder="&nbsp;" id="address" class="input-field">
                 <label>Address</label>
             </div>
             <div class="input-container">
+                <input type="text" name="phone" placeholder="&nbsp;" id="phone" class="input-field">
                 <label>Mobile</label>
-                <input type="text" name="phone" id="phone" class="input-field">
             </div>
             <div class="input-container">
+                <input type="email" name="email" placeholder="&nbsp;" id="email" class="input-field">
                 <label>Email</label>
-                <input type="email" name="email" id="email" class="input-field">
             </div>
             <div class="input-container">
+                <input type="url" name="website" placeholder="&nbsp;" id="website" class="input-field">
                 <label>Website</label>
-                <input type="url" name="website" id="website" class="input-field">
             </div>
             <div class="input-container">
+                <input type="text" name="notes" placeholder="&nbsp;" id="notes" class="input-field">
                 <label>Notes</label>
-                <input type="text" name="notes" id="notes" class="input-field">
             </div>
             <div class="input-container">
+                <input type="url" name="avatar" placeholder="&nbsp;" id="avatar" class="input-field" required>
                 <label>Profile Picture</label>
-                <input type="url" name="avatar" id="avatar" class="input-field" required>
             </div>
             <button onclick="document.getElementsByClassName('popup-container')[0].style.display='none';">Cancel</button>
             <input type="submit" value="Save">
         </form>
     </div>
 </div>
+
+<div class="popup-container">
+    <div class="popup">
+        <form action="{{ url('contact/' .$contacts->id) }}" method="post">
+            {!! csrf_field() !!}
+            @method("PATCH")
+            <input type="hidden" name="id" id="id" value="{{$contacts->id}}" id="id" />
+            <label>Name</label></br>
+            <input type="text" name="name" id="name" value="{{$contacts->name}}" class="form-control"></br>
+            <label>Address</label></br>
+            <input type="text" name="address" id="address" value="{{$contacts->address}}" class="form-control"></br>
+            <label>phone</label></br>
+            <input type="text" name="phone" id="phone" value="{{$contacts->phone}}" class="form-control"></br>
+            <label>Profile Picture</label></br>
+            <input type="url" name="avatar" id="avatar" value="{{$contacts->avatar}}" class="form-control" required></br>
+            <input type="submit" value="Update" class="btn btn-success"></br>
+        </form>
+    </div>
+</div>
+
 <div onclick="document.getElementsByClassName('popup-container')[0].style.display='flex';" class="bt-add-new">
     <a class="bt-add-new-link">Add New +</a>
 </div>

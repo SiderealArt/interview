@@ -206,8 +206,8 @@
             font-weight: 600;
         }
 
-        #phone,
-        #address {
+        #card-phone,
+        #card-address {
             color: rgb(200, 200, 200);
         }
 
@@ -317,7 +317,7 @@
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
             padding: 30px 50px;
             text-align: center;
-            width: 380px;
+            width: 390px;
             max-width: 100%;
             z-index: 39;
         }
@@ -355,7 +355,7 @@
             transform: scale(0.6);
         }
 
-        .input-field:valid+label {
+        .input-field:not(:placeholder-shown)+label {
             transform: scale(0.6);
         }
     </style>
