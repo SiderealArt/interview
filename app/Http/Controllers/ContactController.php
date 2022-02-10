@@ -79,7 +79,7 @@ class ContactController extends Controller
         $contact = Contact::find($id);
         $input = $request->all();
         $contact->update($input);
-        return redirect('contact');
+        return redirect('contact')->with('toast_success', 'Contact updated!');;
     }
 
     /**

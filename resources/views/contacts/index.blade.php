@@ -70,8 +70,8 @@
                 <input type="url" name="avatar" placeholder="&nbsp;" id="avatar" class="input-field" required>
                 <label>Profile Picture</label>
             </div>
-            <button onclick="document.getElementsByClassName('popup-container')[0].style.display='none';">Cancel</button>
-            <input type="submit" value="Save">
+            <button class="delete form-create-button" onclick="document.getElementsByClassName('popup-container')[0].style.display='none';">Cancel</button>
+            <input class="edit form-create-button" type="submit" value="Save">
         </form>
     </div>
 </div>

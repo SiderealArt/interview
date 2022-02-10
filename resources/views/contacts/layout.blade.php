@@ -140,6 +140,13 @@
             border-radius: 25px;
             padding: 10px 20px;
             text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .bt-add-new:hover {
+            background-color: #6f31d4;
+            transform: scale(1.05);
         }
 
         .bt-add-new-link {
@@ -170,7 +177,8 @@
             filter: brightness(40%);
         }
 
-        .action button {
+        button,
+        .edit {
             width: 65px;
             padding: 10px;
             background-color: #ffffff00;
@@ -178,6 +186,7 @@
             color: white;
             border: #e30000 solid 2px;
             transition: all 0.3s ease;
+            cursor: pointer;
         }
 
         .action button:hover {
@@ -192,7 +201,7 @@
             background-color: #00d138;
         }
 
-        .action .edit {
+        .edit {
             border: #0077ed solid 2px;
         }
 
@@ -333,7 +342,7 @@
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
             padding: 30px 50px;
             text-align: center;
-            width: 390px;
+            width: 510px;
             max-width: 100%;
             z-index: 39;
         }
@@ -344,6 +353,7 @@
             margin: 5px;
             border: none;
             overflow: visible;
+            width:100%;
         }
 
         .input-field {
@@ -353,6 +363,7 @@
             font-size: 20px;
             outline: none;
             margin-top: 10px;
+            width:100%;
             background-color: #00000000;
         }
 
@@ -375,11 +386,32 @@
         .input-field:not(:placeholder-shown)+label {
             transform: scale(0.6);
         }
+
+        .form-create-button {
+            width: 100px;
+            margin-top: 15px;
+            color: black;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .edit-container{
+            position:absolute;
+            left:49%;
+            top:15%;
+            transform:translateX(-50%);
+            align-items: center;
+            display:flex;
+            flex-direction: column;
+            justify-content: space-around;
+            width:80vw;
+            height:70vh;
+        }
     </style>
 </head>
 
 <body>
-    
+
     @include('sweetalert::alert')
     <nav class="sidebar">
 
