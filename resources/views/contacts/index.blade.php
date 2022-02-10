@@ -3,11 +3,12 @@
 <h1 style="padding:1.5rem;">Contact List</h1>
 <hr>
 <div class="card-list">
-    @if(count($contacts) < 1) <div class="error-container">
+    @if(count($contacts) < 1)
+     <div class="error-container">
         <i class='bx bx-message-alt-error error-icon'></i>
         <p>Click the button below to add some contacts.</p>
-</div>
-@endif
+    </div>
+    @endif
 @foreach($contacts as $item)
 <div class="card">
     <img alt="" src="{{$item->avatar}}" onerror="this.src='https://picsum.photos/200/300'" />

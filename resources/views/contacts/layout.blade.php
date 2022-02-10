@@ -15,8 +15,12 @@
         }
 
         body {
-            background-color: #f5edfc;
+            background: linear-gradient(to right, #000428, #004e92);
             transition: all 0.3s ease;
+        }
+
+        p, h1, a{
+            color:white;
         }
 
         a {
@@ -262,6 +266,7 @@
             width: 100%;
             filter: blur(5px);
             transform: scale(1.1);
+            object-fit: cover;
         }
 
         .details {
@@ -277,15 +282,17 @@
 
         .show-text {
             font-size: 25px;
+            padding-top:5px;
         }
 
         .show-text-title {
             font-size: 20px;
             font-weight: 600;
-            color: #4d4d4d;
+            color: #776eff;
             border-bottom: #e8d5f2 solid 2px;
             display: block;
             width: fit-content;
+            padding-top:15px;
         }
 
         .show-btn {
@@ -305,7 +312,6 @@
 
         .next {
             right: 20px;
-            color: black;
         }
 
         .popup-container {
@@ -406,6 +412,15 @@
             justify-content: space-around;
             width:80vw;
             height:70vh;
+        }
+
+        .input-field-edit{
+            border-bottom: 2px solid #898989;
+            color:white;
+        }
+
+        .input-field-edit+label{
+            color:grey;
         }
     </style>
 </head>
