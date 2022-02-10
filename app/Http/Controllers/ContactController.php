@@ -25,7 +25,7 @@ class ContactController extends Controller
      */
     public function create()
     {
-        return view('contacts.create');
+
     }
 
     /**
@@ -38,7 +38,7 @@ class ContactController extends Controller
     {
         $input = $request->all();
         Contact::create($input);
-        return redirect('contact')->with('flash_message', 'Contact added!');
+        return redirect('contact')->with('toast_success', 'Contact created successfully!');
     }
 
     /**
@@ -79,7 +79,7 @@ class ContactController extends Controller
         $contact = Contact::find($id);
         $input = $request->all();
         $contact->update($input);
-        return redirect('contact')->with('flash_message', 'Contact Updated!');
+        return redirect('contact');
     }
 
     /**
@@ -91,6 +91,6 @@ class ContactController extends Controller
     public function destroy($id)
     {
         Contact::destroy($id);
-        return redirect('contact')->with('flash_message', 'Contact deleted!');
+        return redirect('contact')->with('toast_success', 'Contact deleted!');
     }
 }

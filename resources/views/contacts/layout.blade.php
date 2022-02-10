@@ -274,7 +274,9 @@
             font-size: 20px;
             font-weight: 600;
             color: #4d4d4d;
-            border-bottom: #737373 solid 1px;
+            border-bottom: #e8d5f2 solid 2px;
+            display: block;
+            width: fit-content;
         }
 
         .show-btn {
@@ -298,6 +300,20 @@
         }
 
         .popup-container {
+            position: fixed;
+            background-color: rgba(0, 0, 0, 0.3);
+            align-items: center;
+            justify-content: center;
+            display: none;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 100vw;
+            transition: opacity 0.3s ease;
+            z-index: 40;
+        }
+
+        .popup-container-update {
             position: fixed;
             background-color: rgba(0, 0, 0, 0.3);
             align-items: center;
@@ -362,6 +378,8 @@
 </head>
 
 <body>
+    
+    @include('sweetalert::alert')
     <nav class="sidebar">
 
         <div class="menu-bar">

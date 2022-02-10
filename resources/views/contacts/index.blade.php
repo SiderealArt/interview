@@ -48,23 +48,23 @@
             </div>
             <div class="input-container">
                 <input type="text" name="address" placeholder="&nbsp;" id="address" class="input-field">
-                <label>Address</label>
+                <label>Address (Optional)</label>
             </div>
             <div class="input-container">
                 <input type="text" name="phone" placeholder="&nbsp;" id="phone" class="input-field">
-                <label>Mobile</label>
+                <label>Mobile (Optional)</label>
             </div>
             <div class="input-container">
                 <input type="email" name="email" placeholder="&nbsp;" id="email" class="input-field">
-                <label>Email</label>
+                <label>Email (Optional)</label>
             </div>
             <div class="input-container">
                 <input type="url" name="website" placeholder="&nbsp;" id="website" class="input-field">
-                <label>Website</label>
+                <label>Website (Optional)</label>
             </div>
             <div class="input-container">
                 <input type="text" name="notes" placeholder="&nbsp;" id="notes" class="input-field">
-                <label>Notes</label>
+                <label>Notes (Optional)</label>
             </div>
             <div class="input-container">
                 <input type="url" name="avatar" placeholder="&nbsp;" id="avatar" class="input-field" required>
@@ -76,24 +76,6 @@
     </div>
 </div>
 
-<div class="popup-container">
-    <div class="popup">
-        <form action="{{ url('contact/' .$contacts->id) }}" method="post">
-            {!! csrf_field() !!}
-            @method("PATCH")
-            <input type="hidden" name="id" id="id" value="{{$contacts->id}}" id="id" />
-            <label>Name</label></br>
-            <input type="text" name="name" id="name" value="{{$contacts->name}}" class="form-control"></br>
-            <label>Address</label></br>
-            <input type="text" name="address" id="address" value="{{$contacts->address}}" class="form-control"></br>
-            <label>phone</label></br>
-            <input type="text" name="phone" id="phone" value="{{$contacts->phone}}" class="form-control"></br>
-            <label>Profile Picture</label></br>
-            <input type="url" name="avatar" id="avatar" value="{{$contacts->avatar}}" class="form-control" required></br>
-            <input type="submit" value="Update" class="btn btn-success"></br>
-        </form>
-    </div>
-</div>
 
 <div onclick="document.getElementsByClassName('popup-container')[0].style.display='flex';" class="bt-add-new">
     <a class="bt-add-new-link">Add New +</a>

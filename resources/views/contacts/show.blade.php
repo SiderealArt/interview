@@ -9,7 +9,7 @@
     <p class="show-text">{{ $contacts->created_at }}</p>
     <p>Last Updated at </p>
     <p class="show-text">{{ $contacts->updated_at }}</p>
-    <span class="show-text-title">Address </span>
+    <p class="show-text-title">Address </span>
     <p class="show-text">{{ $contacts->address }}</p>
     <p class="show-text-title">Phone </p>
     <p class="show-text">{{ $contacts->phone }}</p>
