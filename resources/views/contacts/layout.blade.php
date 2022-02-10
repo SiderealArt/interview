@@ -353,6 +353,7 @@
             font-size: 20px;
             outline: none;
             margin-top: 10px;
+            background-color: #00000000;
         }
 
         label {
